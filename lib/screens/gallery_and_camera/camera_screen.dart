@@ -182,13 +182,13 @@ class _CameraScreenState extends State<CameraScreen> {
                             ? Text(
                                 "Capture Image",
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 19,
                                 ),
                               )
                             : Text(
                                 "Capture Again",
                                 style: TextStyle(
-                                  fontSize: 20,
+                                  fontSize: 19,
                                 ),
                               ),
                       ],

@@ -23,12 +23,15 @@ class WidgetTiles extends StatelessWidget {
 
   final IconData iconData;
 
+  final double number;
+
   const WidgetTiles({
     super.key,
     required this.title,
     required this.description,
     required this.imageAddress,
     required this.iconData,
+    required this.number,
   });
 
   @override
@@ -56,7 +59,7 @@ class WidgetTiles extends StatelessWidget {
                 ),
                 child: Image.asset(
                   imageAddress,
-                  height: mq.height * .2,
+                  height: mq.height * number,
                   width: mq.width * 1,
                 ),
               ),

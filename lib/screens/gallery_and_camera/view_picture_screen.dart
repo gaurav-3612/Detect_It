@@ -135,7 +135,7 @@ class _ViewPictureScreenState extends State<ViewPictureScreen> {
 
             // Results printing on UI for selected image.
             Text(
-              results,
+              results == "" ? "Sorry, Can't find any." : results,
               style: const TextStyle(
                 fontSize: 17,
                 fontWeight: FontWeight.bold,

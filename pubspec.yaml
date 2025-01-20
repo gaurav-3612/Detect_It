@@ -79,6 +79,18 @@ dependencies:
   # For Flutter Core
   firebase_core: ^3.6.0
 
+  # For Image Generation
+  stability_image_generation: ^0.0.4
+
+  # For Cropping Image
+  image_cropper: ^8.1.0
+
+  # For Gemini Intergration
+  flutter_gemini: ^2.0.5
+
+  # For ChatBot UI
+  dash_chat_2: ^0.0.21
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

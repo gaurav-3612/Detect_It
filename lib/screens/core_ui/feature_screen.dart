@@ -31,6 +31,8 @@ class _FeatureScreenState extends State<FeatureScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.pink.shade50,
+
+      // AppBar for screen.
       appBar: AppBar(
         title: const Text(
           "Features",
@@ -53,6 +55,8 @@ class _FeatureScreenState extends State<FeatureScreen> {
           ),
         ),
       ),
+
+      // UI for entire screen.
       body: Stack(
         children: [
           Container(
@@ -70,6 +74,7 @@ class _FeatureScreenState extends State<FeatureScreen> {
           SingleChildScrollView(
             child: Column(
               children: [
+                // Some Spacing.
                 SizedBox(height: mq.height * .02),
 
                 // For Image Labeling from camera.
@@ -88,6 +93,7 @@ class _FeatureScreenState extends State<FeatureScreen> {
                   ),
                 ),
 
+                // Some Spacing.
                 SizedBox(height: mq.height * .01),
 
                 // For Image Generation by AI.
@@ -105,6 +111,7 @@ class _FeatureScreenState extends State<FeatureScreen> {
                   ),
                 ),
 
+                // Some Spacing.
                 SizedBox(height: mq.height * .01),
 
                 // For Math Solving.
@@ -122,6 +129,7 @@ class _FeatureScreenState extends State<FeatureScreen> {
                   ),
                 ),
 
+                // Some Spacing.
                 SizedBox(height: mq.height * .1),
               ],
             ),

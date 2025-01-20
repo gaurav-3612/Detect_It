@@ -199,7 +199,7 @@ class _CameraScreenState extends State<CameraScreen> {
 
               SizedBox(
                 height: mq.height * .1,
-              )
+              ),
             ],
           ),
         ),

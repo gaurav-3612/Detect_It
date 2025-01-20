@@ -3,6 +3,7 @@ import 'package:detect_it/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:stability_image_generation/stability_image_generation.dart';
 
 class ImageGenerate extends StatefulWidget {
@@ -13,14 +14,19 @@ class ImageGenerate extends StatefulWidget {
 }
 
 class _ImageGenerateState extends State<ImageGenerate> {
+  // Text Editing Controller for prompts.
   final TextEditingController textEditingController = TextEditingController();
 
+  // AI intialization for image.
   final StabilityAI _ai = StabilityAI();
 
+  // API Key for generation.
   final String apiKey = 'sk-KiFKww7CbmpqdLoPHkReObEOs5BQMVpxdjgIOlM5CVmpdtFD';
 
-  final ImageAIStyle imageAIStyle = ImageAIStyle.anime;
+  // Defining style for image.
+  final ImageAIStyle imageAIStyle = ImageAIStyle.cyberPunk;
 
+  // Checking whether it's running or not.
   bool run = false;
 
   Future<Uint8List> _generate(String query) async {
@@ -33,10 +39,27 @@ class _ImageGenerateState extends State<ImageGenerate> {
     return image;
   }
 
+  void generateImage() {
+    /// Get the user input from the Controller.
+    String query = textEditingController.text;
+    if (query.isNotEmpty) {
+      /// If the user input is not empty, set [run] to true to generate the image.
+      setState(() {
+        run = true;
+      });
+    } else {
+      /// If the user input is empty, print an error message.
+      if (kDebugMode) {
+        print('Query is empty !!');
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.pink.shade50,
+      // App Bar.
       appBar: AppBar(
         title: const Text(
           "Generate Now",
@@ -58,15 +81,20 @@ class _ImageGenerateState extends State<ImageGenerate> {
           ),
         ),
       ),
+
+      // UI of the entire Screen.
       body: SingleChildScrollView(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              // Some Spacing.
               SizedBox(
                 height: mq.height * .12,
               ),
+
+              // TextField taking the prompt as input from user.
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: mq.width * .05),
                 child: MyTextFields(
@@ -80,6 +108,7 @@ class _ImageGenerateState extends State<ImageGenerate> {
                 ),
               ),
 
+              // Checking various conditions to display generated picture or text mentioning how to generate one.
               Padding(
                 padding: const EdgeInsets.all(20),
                 child: run
@@ -93,8 +122,12 @@ class _ImageGenerateState extends State<ImageGenerate> {
                             if (snapshot.connectionState ==
                                 ConnectionState.waiting) {
                               /// While waiting for the image data, display a loading indicator.
-                              return const Center(
-                                child: CircularProgressIndicator(),
+                              return Center(
+                                child: LoadingAnimationWidget.twistingDots(
+                                  leftDotColor: const Color(0xFF1A1A3F),
+                                  rightDotColor: const Color(0xFFEA3799),
+                                  size: mq.width * .1,
+                                ),
                               );
                             } else if (snapshot.hasError) {
                               /// If an error occurred while getting the image data, display an error message.
@@ -112,6 +145,8 @@ class _ImageGenerateState extends State<ImageGenerate> {
                           },
                         ),
                       )
+
+                    // Text Instruction for how to generate image from prompt.
                     : SizedBox(
                         height: mq.height * .3,
                         width: mq.width,
@@ -128,7 +163,8 @@ class _ImageGenerateState extends State<ImageGenerate> {
                         ),
                       ),
               ),
-              // Button to capture image.
+
+              // Button to generate image.
               Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: mq.width * .18,
@@ -147,21 +183,7 @@ class _ImageGenerateState extends State<ImageGenerate> {
                   ),
                   height: mq.height * .063,
                   child: InkWell(
-                    onTap: () {
-                      /// Get the user input from the [_queryController].
-                      String query = textEditingController.text;
-                      if (query.isNotEmpty) {
-                        /// If the user input is not empty, set [run] to true to generate the image.
-                        setState(() {
-                          run = true;
-                        });
-                      } else {
-                        /// If the user input is empty, print an error message.
-                        if (kDebugMode) {
-                          print('Query is empty !!');
-                        }
-                      }
-                    },
+                    onTap: generateImage,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,

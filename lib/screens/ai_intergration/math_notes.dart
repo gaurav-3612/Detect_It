@@ -1,8 +1,6 @@
 import 'dart:developer';
 import 'dart:io';
-
 import 'package:detect_it/main.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gemini/flutter_gemini.dart';
 import 'package:image_picker/image_picker.dart';
@@ -31,6 +29,10 @@ class _MathNotesState extends State<MathNotes> {
     imagePicker = ImagePicker();
   }
 
+  // Function Dealing with all the stuff regarding
+  // Selecting Image
+  // Cropping the problem
+  // Provides the solution
   selectImage() async {
     XFile? selectedImage =
         await imagePicker.pickImage(source: ImageSource.gallery);
@@ -110,6 +112,8 @@ class _MathNotesState extends State<MathNotes> {
           ),
         ),
       ),
+
+      // UI of entire screen.
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(top: 20.0),
@@ -119,6 +123,8 @@ class _MathNotesState extends State<MathNotes> {
                 alignment: Alignment.center,
                 height: imageQuestion == null ? 300 : null,
                 width: mq.width,
+
+                // If no image then there's a text.
                 child: imageQuestion == null
                     ? const Text(
                         "No Image yet.\nClick One Now.",
@@ -129,14 +135,19 @@ class _MathNotesState extends State<MathNotes> {
                         ),
                         textAlign: TextAlign.center,
                       )
+                    // Otherwise we'll show the image.
                     : Image.file(
                         imageQuestion!,
                         fit: BoxFit.fitWidth,
                       ),
               ),
+
+              // Some Spacing.
               const SizedBox(
                 height: 20,
               ),
+
+              // Checking conditions to print the answer.
               isLoading == false && answer == null
                   ? const Padding(
                       padding:
@@ -169,9 +180,13 @@ class _MathNotesState extends State<MathNotes> {
                             ),
                           ),
                         ),
+
+              // Some Spacing.
               SizedBox(
                 height: mq.height * .04,
               ),
+
+              // Button for Uploading Image
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: mq.width * .18),
                 child: Container(
@@ -211,6 +226,8 @@ class _MathNotesState extends State<MathNotes> {
                   ),
                 ),
               ),
+
+              // Little Bit Of Space at the end.
               SizedBox(
                 height: mq.height * 0.08,
               )

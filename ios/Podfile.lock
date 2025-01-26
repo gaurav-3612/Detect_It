@@ -39,6 +39,8 @@ PODS:
   - FirebaseCoreInternal (11.4.2):
     - "GoogleUtilities/NSData+zlib (~> 8.0)"
   - Flutter (1.0.0)
+  - gallery_saver_updated (0.0.1):
+    - Flutter
   - google_mlkit_commons (0.9.0):
     - Flutter
     - MLKitVision
@@ -176,6 +178,7 @@ DEPENDENCIES:
   - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - Flutter (from `Flutter`)
+  - gallery_saver_updated (from `.symlinks/plugins/gallery_saver_updated/ios`)
   - google_mlkit_commons (from `.symlinks/plugins/google_mlkit_commons/ios`)
   - google_mlkit_image_labeling (from `.symlinks/plugins/google_mlkit_image_labeling/ios`)
   - google_sign_in_ios (from `.symlinks/plugins/google_sign_in_ios/darwin`)
@@ -228,6 +231,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_core/ios"
   Flutter:
     :path: Flutter
+  gallery_saver_updated:
+    :path: ".symlinks/plugins/gallery_saver_updated/ios"
   google_mlkit_commons:
     :path: ".symlinks/plugins/google_mlkit_commons/ios"
   google_mlkit_image_labeling:
@@ -266,6 +271,7 @@ SPEC CHECKSUMS:
   FirebaseCoreExtension: f1bc67a4702931a7caa097d8e4ac0a1b0d16720e
   FirebaseCoreInternal: 35731192cab10797b88411be84940d2beb33a238
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  gallery_saver_updated: 4670d020916ed50f0e284ad77fbcbe5d6d85edc9
   google_mlkit_commons: 384e4e206e122b6dad430d3158205e0b2fac6789
   google_mlkit_image_labeling: d5b60af262f4920caa9e860c5a1b674c17d2ada4
   google_sign_in_ios: 07375bfbf2620bc93a602c0e27160d6afc6ead38

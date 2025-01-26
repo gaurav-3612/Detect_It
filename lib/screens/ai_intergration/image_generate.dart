@@ -21,7 +21,7 @@ class _ImageGenerateState extends State<ImageGenerate> {
   final StabilityAI _ai = StabilityAI();
 
   // API Key for generation.
-  final String apiKey = 'sk-KiFKww7CbmpqdLoPHkReObEOs5BQMVpxdjgIOlM5CVmpdtFD';
+  final String apiKey = 'sk-BNs7uLmWpf6BNa5aMFBvQKllvWKbvfJqQzCkO1Q0mes4RcUu';
 
   // Defining style for image.
   final ImageAIStyle imageAIStyle = ImageAIStyle.cyberPunk;

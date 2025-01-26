@@ -43,7 +43,7 @@ class WidgetTiles extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: Colors.black38.withOpacity(.28),
+          color: Colors.black38.withOpacity(.23),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

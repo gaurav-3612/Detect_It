@@ -2,7 +2,7 @@ name: detect_it
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -31,15 +31,13 @@ dependencies:
   flutter:
     sdk: flutter
 
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
 
-
   # For Image Labeling using Google ML Kit
   google_mlkit_image_labeling: ^0.13.0
-  
+
   # For Firebase Authentication
   firebase_auth: ^5.3.1
 
@@ -74,7 +72,7 @@ dependencies:
   camera: ^0.11.0+2
 
   # For Picking Image
-  image_picker: ^0.8.5+3 
+  image_picker: ^0.8.5+3
 
   # For Flutter Core
   firebase_core: ^3.6.0
@@ -101,7 +99,7 @@ flutter_launcher_icons:
   android: "ic_launcher"
   ios: true
   image_path: "assets/Images/app_icon.png"
-  min_sdk_android: 21 
+  min_sdk_android: 21
   remove_alpha_ios: true
 
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -116,7 +114,6 @@ flutter_launcher_icons:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
